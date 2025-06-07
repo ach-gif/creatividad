@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mes créations - creatividad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #f9f9f9; /* ✅ changé de #333 à blanc clair */
+      color: black;         /* ✅ texte en noir */
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li {
+      margin-right: 15px;
+    }
+
+    nav a {
+      color: black; /* ✅ liens noirs au lieu de blancs */
+      text-decoration: none;
+    }
+
+    nav a.active {
+      font-weight: bold;
+      border-bottom: 2px solid black;
+    }
+
+    .titre-propos {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .filtres {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filtre {
+      margin: 0 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+      border: none;
+      background-color: #eee;
+    }
+
+    .filtre.actif {
+      background-color: #333;
+      color: white;
+    }
+
+    .galerie {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .carte {
+      width: 250px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .carte:hover {
+      transform: scale(1.05);
+    }
+
+    .image-container {
+      position: relative;
+    }
+
+    .carte img {
+      width: 100%;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: rgba(0, 0, 255, 0.7);
+      padding: 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .overlay:hover {
+      background-color: rgba(0, 0, 180, 0.9);
+    }
+
+    .icon {
+      font-size: 20px;
+      color: white;
+    }
+
+    .carte p {
+      text-align: center;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    #lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 255, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    #lightbox span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+    
+
+<header>
+  <h1>creatividad</h1>
+  <nav class="menu">
+    <ul id="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="creation.html" class="active">Mes créations</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- reste du code inchangé -->
+
+
+<main>
+  <h2 class="titre-propos">Mes créations</h2>
+
+  <div class="filtres">
+    <button class="filtre actif" onclick="filtrer('all')">Tous</button>
+    <button class="filtre" onclick="filtrer('web')">Web</button>
+    <button class="filtre" onclick="filtrer('affiche')">Affiche</button>
+    <button class="filtre" onclick="filtrer('desktop')">Desktop</button>
+  </div>
+
+  <div class="galerie">
+    <div class="carte web">
+      <div class="image-container">
+        <img src="images/projet1.jpg" alt="Site Web Portfolio">
+        <div class="overlay" onclick="ouvrirLightbox('images/projet1.jpg')"><span class="icon">👁</span></div>
+      </div>
+      <p>Site Web Portfolio</p>
+      <div class="description">Un site personnel pour présenter mes compétences.</div>
+    </div>
+    <div class="carte web">
+      <div class="image-container">
+        <img src="images/projet2.png" alt="Projet Web 7">
+        <div class="overlay" onclick="ouvrirLightbox('images/projet7.jpg')"><span class="icon">👁</span></div>
+      </div>
+      <p>Projet Web 7</p>
+      <div class="description">Site vitrine pour un service local.</div>
+    </div>
+
+    <div class="carte web">
+      <div class="image-container">
+        <img src="images/projet3.jpg" alt="Projet Web 3">
+        <div class="overlay" onclick="ouvrirLightbox('images/projet3.jpg')"><span class="icon">👁</span></div>
+      </div>
+      <p>Projet Web 3</p>
+      <div class="description">Un site de présentation de produit fictif.</div>
+    </div>
+
+    <div class="carte affiche">
+      <div class="image-container">
+        <img src="images/projet4.jpg" alt="Affiche Projet 4">
+        <div class="overlay" onclick="ouvrirLightbox('images/projet4.jpg')"><span class="icon">👁</span></div>
+      </div>
+      <p>Projet Affiche 4</p>
+      <div class="description">Affiche promotionnelle pour un événement.</div>
+    </div>
+
+    <div class="carte affiche">
+      <div class="image-container">
+        <img src="images/projet5.jpg" alt="Affiche Projet 5">
+        <div class="overlay" onclick="ouvrirLightbox('images/projet5.jpg')"><span class="icon">👁</span></div>
+      </div>
+      <p>Projet Affiche 5</p>
+      <div class="description">Conception d'une affiche artistique.</div>
+    </div>
+
+    <div class="carte affiche">
+      <div class="image-container">
+        <img src="images/projet6.jpg" alt="Affiche Projet 6">
+        <div class="overlay" onclick="ouvrirLightbox('images/projet6.jpg')"><span class="icon">👁</span></div>
+      </div>
+      <p>Projet Affiche 6</p>
+      <div class="description">Visuel d’une campagne environnementale.</div>
+    </div>
+
+    <div class="carte desktop">
+      <div class="image-container">
+        <img src="images/projet7.png" alt="Application Desktop">
+        <div class="overlay" onclick="ouvrirLightbox('images/projet2.jpg')"><span class="icon">👁</span></div>
+      </div>
+      <p>Application Desktop</p>
+      <div class="description">Logiciel de gestion de bibliothèque.</div>
+    </div>
+
+    <div class="carte affiche">
+      <div class="image-container">
+        <img src="images/projet8.jpg" alt="Affiche Projet 8">
+        <div class="overlay" onclick="ouvrirLightbox('images/projet8.jpg')"><span class="icon">👁</span></div>
+      </div>
+      <p>Projet Affiche 8</p>
+      <div class="description">Création graphique pour une affiche culturelle.</div>
+    </div>
+  </div>
+</main>
+
+
+<div id="lightbox" onclick="fermerLightbox()">
+  <span>&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<section class="intro-temoignages" style="text-align: center; margin: 40px 0;">
+  <h2 style="font-size: 28px; margin-bottom: 10px;">Témoignages</h2>
+  <p style="font-size: 16px; color: #555;">
+    Découvrez ce que mes clients pensent de mon travail et de mon engagement pour la réussite de leurs projets.
+  </p>
+</section>
+
+
+
+<section class="temoignages-carousel">
+  <button class="prev">&#10094;</button>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="slide">
+        <img src="images/personne1.jpg" alt="Client 1">
+        <blockquote>Super travail, très professionnel et à l'écoute !</blockquote>
+        <p class="auteur">KETEMEPI maeva</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne2.jpg" alt="Client 2">
+        <blockquote>Une expérience incroyable du début à la fin. Merci !</blockquote>
+        <p class="auteur">DEBBEVI odette</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne3.jpg" alt="Client 3">
+        <blockquote>Créatif, rapide et très impliqué. Je recommande !</blockquote>
+        <p class="auteur">—AFIKOU benedicte</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne4.jpg" alt="Client 4">
+        <blockquote>Le résultat a dépassé mes attentes. Bravo !</blockquote>
+        <p class="auteur">prescilia</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne5.jpg" alt="Client 5">
+        <blockquote>Excellent suivi et très bon relationnel. Je suis ravi.</blockquote>
+        <p class="auteur">KATAWA lea</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne6.jpg" alt="Client 6">
+        <blockquote>Très professionnel, je ferai encore appel à lui !</blockquote>
+        <p class="auteur">chola</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne7.jpg" alt="Client 7">
+        <blockquote>Travail de qualité, livraison rapide. Merci infiniment.</blockquote>
+        <p class="auteur">kevin</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne8.jpg" alt="Client 8">
+        <blockquote>Je recommande à 100 %, très satisfait du rendu.</blockquote>
+        <p class="auteur">jackeline</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne9.jpg" alt="Client 9">
+        <blockquote>Merci pour ton sérieux et ton implication.</blockquote>
+        <p class="auteur">KPATCHA constan</p>
+      </div>
+      <div class="slide">
+        <img src="images/personne10.jpg" alt="Client 10">
+        <blockquote>Un travail soigné et original, je suis bluffé !</blockquote>
+        <p class="auteur">AGUEDE mickel</p>
+      </div>
+    </div>
+  </div>
+  <button class="next">&#10095;</button>
+</section>
+<div style="text-align: center; margin: 40px 0;">
+  <a href="services.html" style="text-decoration: none;">
+    <button style="padding: 12px 25px; font-size: 16px; background-color: #0066cc; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Page suivante : Services 
+    </button>
+  </a>
+</div>
+
+
+
+
+<footer>
+  <p>&copy; 2025 MonSiteWeb</p>
+</footer>
+
+<script>
+  function filtrer(categorie) {
+    const boutons = document.querySelectorAll(".filtre");
+    boutons.forEach(btn => btn.classList.remove("actif"));
+    event.target.classList.add("actif");
+
+    const projets = document.querySelectorAll(".carte");
+    projets.forEach(projet => {
+      if (categorie === "all" || projet.classList.contains(categorie)) {
+        projet.style.display = "block";
+      } else {
+        projet.style.display = "none";
+      }
+    });
+  }
+
+  function ouvrirLightbox(src) {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    img.src = src;
+    lightbox.style.display = "flex";
+  }
+
+  function fermerLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+<script>
+  const carousel = document.querySelector('.carousel');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  const container = document.querySelector('.carousel-container');
+  let index = 0;
+  const slideWidth = slides[0].offsetWidth + 30;
+
+  function showSlide(i) {
+    carousel.style.transform = `translateX(-${i * slideWidth}px)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  let interval = setInterval(nextSlide, 4000);
+
+  // Pause au survol
+  container.addEventListener('mouseenter', () => clearInterval(interval));
+  container.addEventListener('mouseleave', () => {
+    interval = setInterval(nextSlide, 4000);
+  });
+</script>
+
+</body>
+</html>

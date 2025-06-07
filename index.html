@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accueil - creatividad</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+
+<header>
+  <h1>creatividad</h1>
+  <nav class="menu">
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+
+      <li><a href="creations.html">Mes créations</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h2>Bienvenue sur mon site !</h2>
+  <div class="image-avec-texte">
+    <img src="images/accueil.jpg" alt="Image avec texte">
+    <div class="texte-sur-image">
+      <p class="gros-texte">Concevoir des expériences numériques inspirantes avec créativité et engagement.</p>
+      <p class="petit-texte">Donner vie aux idées avec ingéniosité, en alliant créativité et innovation pour des solutions élégantes et efficaces.</p>
+      <div class="boutons">
+        <a href="creations.html" class="btn">Voir mes projets</a>
+        <a href="contact.html" class="btn">Me contacter</a>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+  <section class="statistiques">
+  <div class="stat">
+    <h3 class="counter" data-target="2">0</h3>
+    <p>Années de formation</p>
+  </div>
+  <div class="stat">
+    <h3 class="counter" data-target="10">0</h3>
+    <p>Projets réalisés</p>
+  </div>
+  <div class="stat">
+    <h3 class="counter" data-target="100">0</h3>
+    <p>Clients satisfaits</p>
+  </div>
+</section>
+ 
+  <div style="text-align: center; margin: 40px 0;">
+  <a href="about.html" class="btn-services">
+    A SAVOIR PLUS
+  </a>
+</div>
+</main>
+
+<footer>
+  
+<p>&copy; 2025 MonSiteWeb. Tous droits réservés.</p>
+
+  
+</footer>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("nav-links");
+    menu.classList.toggle("show");
+  }
+</script>
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("nav-links");
+    menu.classList.toggle("show");
+  }
+
+  // Animation des chiffres
+  const counters = document.querySelectorAll('.counter');
+  let animated = false;
+
+  function animateCounters() {
+    if (animated) return;
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 100;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target + (target === 100 ? "%" : "+");
+        }
+      };
+
+      updateCount();
+    });
+
+    animated = true;
+  }
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+  window.addEventListener('scroll', () => {
+    const section = document.querySelector('.statistiques');
+    if (isInViewport(section)) {
+      animateCounters();
+    }
+  });
+</script>
+
+
+</body>
+</html>
+
+

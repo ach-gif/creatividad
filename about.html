@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>À propos - creatividad</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+
+  <header>
+    <h1>creatividad</h1>
+    <nav class="menu">
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html" class="active">À propos</a></li>
+        <li><a href="creations.html">Mes créations</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="titre-propos">À propos de moi</h2>
+
+    <div class="contenu-propos">
+      <img src="images/moi.jpg" alt="Photo de Dovi Archile">
+      <div class="texte-propos">
+        <p>Je m'appelle <strong>Dovi Archile</strong><br>
+        Étudiant en 2ᵉ année de développement d'application à l'<strong>UCAO-UUT</strong>, je suis passionné par la création de solutions web, mobiles et graphiques qui répondent aux besoins spécifiques de mes clients.</p>
+        <p>Mon approche combine <strong>créativité</strong> et <strong>rigueur technique</strong> pour livrer des projets qui se démarquent. Je travaille avec sérieux, créativité et efficacité pour aider mes clients à réussir leurs projets numériques.</p>
+      </div>
+    </div>
+
+    <!-- Début des compétences techniques -->
+    <section class="competences">
+      <h2>Compétences Techniques</h2>
+      <div class="competence-container">
+
+        <div class="competence">
+          <h3>HTML/CSS</h3>
+          <p>Intégration web moderne et responsive.</p>
+          <div class="progress-bar"><div class="bar" style="width: 90%;"></div></div>
+          <span class="pourcentage">90%</span>
+        </div>
+
+        <div class="competence">
+          <h3>JavaScript</h3>
+          <p>Scripts dynamiques et interactions web.</p>
+          <div class="progress-bar"><div class="bar" style="width: 65%;"></div></div>
+          <span class="pourcentage">65%</span>
+        </div>
+
+        <div class="competence">
+          <h3>Java (Swing)</h3>
+          <p>Applications desktop robustes.</p>
+          <div class="progress-bar"><div class="bar" style="width: 80%;"></div></div>
+          <span class="pourcentage">80%</span>
+        </div>
+
+        <div class="competence">
+          <h3>PHP/MySQL</h3>
+          <p>Développement back-end et gestion de base de données.</p>
+          <div class="progress-bar"><div class="bar" style="width: 80%;"></div></div>
+          <span class="pourcentage">80%</span>
+        </div>
+
+        <div class="competence">
+          <h3>Flutter/Firebase</h3>
+          <p>Applications mobiles multiplateformes.</p>
+          <div class="progress-bar"><div class="bar" style="width: 70%;"></div></div>
+          <span class="pourcentage">70%</span>
+        </div>
+
+        <div class="competence">
+          <h3>Canva</h3>
+          <p>Création graphique et visuels attractifs.</p>
+          <div class="progress-bar"><div class="bar" style="width: 90%;"></div></div>
+          <span class="pourcentage">90%</span>
+        </div>
+
+        <div class="competence">
+          <h3>CapCut</h3>
+          <p>Montage vidéo et contenus dynamiques.</p>
+          <div class="progress-bar"><div class="bar" style="width: 85%;"></div></div>
+          <span class="pourcentage">85%</span>
+        </div>
+
+        <div class="competence">
+          <h3>WordPress</h3>
+          <p>Création et gestion de sites web avec WordPress.</p>
+          <div class="progress-bar"><div class="bar" style="width: 75%;"></div></div>
+          <span class="pourcentage">75%</span>
+        </div>
+
+      </div>
+    </section>
+    <div style="text-align: center; margin: 40px 0;">
+  <a href="creations.html" class="nav-btn">Voir mes créations </a>
+</div>
+
+    
+    <!-- Fin des compétences techniques -->
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MonSiteWeb</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("nav-links");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

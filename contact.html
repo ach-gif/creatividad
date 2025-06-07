@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact - creatividad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f2f2f2, #e6e6e6);
+    }
+
+    .contact-wrapper {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .contact-form label {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+      color: #444;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 8px;
+      font-size: 16px;
+      transition: border 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    .contact-form button {
+      margin-top: 25px;
+      background-color: #007BFF;
+      color: white;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+
+    .contact-icons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .contact-icons a {
+      color: #007BFF;
+      margin: 0 10px;
+      font-size: 24px;
+      transition: color 0.3s;
+    }
+
+    .contact-icons a:hover {
+      color: #0056b3;
+    }
+
+    .bottom-nav {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .bottom-nav a {
+      background: #444;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .bottom-nav a:hover {
+      background: #222;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-wrapper">
+    <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
+    <form class="contact-form" action="contact.php" method="POST">
+      <label for="name"><i class="fas fa-user"></i> Nom :</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email"><i class="fas fa-envelope"></i> Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message"><i class="fas fa-comment-dots"></i> Message :</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit"><i class="fas fa-paper-plane"></i> Envoyer</button>
+    </form>
+
+    <div class="contact-icons">
+      <a href="https://facebook.com/tonprofil" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com/tonprofil" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/22879660516" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <div class="bottom-nav">
+      <a href="cv.html"><i class="fas fa-file-alt"></i> Voir mon CV</a>
+      <div class="bottom-nav">
+  <a href="cv.html" style="background-color: #28a745;"><i class="fas fa-arrow-right"></i> Page suivante</a>
+</div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 creatividad - Tous droits réservés</p>
+    <p>Téléphone : <a href="tel:+22879660516" style="color: #4da6ff;">+228 79 66 05 16</a></p>
+  </footer>
+
+</body>
+</html>
